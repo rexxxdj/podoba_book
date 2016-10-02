@@ -1,5 +1,5 @@
-*.pyc,
-*~,
-*.egg-info,
-*.mo,
+*.pyc
+*~
+*.egg-info
+*.mo
 *.egg
