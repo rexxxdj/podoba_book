@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="us">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Accounting Student Service</title>
+		<meta name="desctiption"
+			  value="Система Учета Студеттов Учебного Заведения" />
+		<!-- Include Styles -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<!-- <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid red;}</style> -->
+
+	</head>
+	<body>
+		<!-- Start Container -->
+		<div class="container">
+			<!-- Start Header -->
+			<div class="row" id="header">
+				<!-- LOGO -->
+				<div class="col-xs-8">
+					<h1>Accounting Student Service</h1>
+				</div>
+				<!-- Groups Selector -->
+				<div class="col-xs-4" id="group-selector">
+					<strong>Students:</strong>
+					<select>
+						<option value="">All Students</option>
+						<option value="">IT - 21, Tokar Ruslan</option>
+						<option value="">IT - 22, Sergiy Povazhnuk</option>
+					</select>
+				</div>
+			</div> 
+			<!-- End Header -->
+
+			<!-- Start SubHeader -->
+			<div class="row" id="sub-header">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentatuion">
+							<a href="index.html">Students</a>
+						</li>
+						<li role="presentatuion" class="active">
+							<a href="attendance.html">Attendance</a>
+						</li>
+						<li role="presentatuion">
+							<a href="groups.html">Groups</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- End SubHeader -->
+
+			<!-- Start Main Page Content -->
+			<div class="row" id="content-columns">
+				<div class="col-xs-12" id="content-column">
+					<h2>Attendance Allowance</h2>
+					<p class="mcalendar">
+						<a href="#">&lArr;</a>
+						<a href="#"> October </a>
+						<a href="#"> 2016 </a>
+						<a href="#">&rArr;</a>
+					</p>
+					<hr>
+					<!-- Start List -->
+					<table class="table table-hover table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Student</th>
+								<th>We<br>1</th>
+								<th>Th<br>2</th>
+								<th>Fr<br>3</th>
+								<th>Sa<br>4</th>
+								<th style="color: red">Su<br>5</th>
+								<th>Mo<br>6</th>
+								<th>Tu<br>7</th>
+								<th>We<br>8</th>
+								<th>Th<br>9</th>
+								<th>Fr<br>10</th>
+								<th>Sa<br>11</th>
+								<th style="color: red">Sa<br>12</th>
+								<th>...</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>1</th>
+								<th><a href="#">Rusan Tokar</a></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th style="color: red"><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th style="color: red"><input type="checkbox" checked></th>
+								<th>...</th>
+							</tr>
+							<tr>
+								<th>2</th>
+								<th><a href="#">Oleg Ponomarenko</a></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th style="color: red"><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th style="color: red"><input type="checkbox" checked></th>
+								<th>...</th>
+							</tr>
+							<tr>
+								<th>3</th>
+								<th><a href="#">Ivan Ivanov</a></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th style="color: red"><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" checked></th>
+								<th><input type="checkbox" unchecked></th>
+								<th style="color: red"><input type="checkbox" checked></th>
+								<th>...</th>
+							</tr>
+						</tbody>
+					</table>
+					<!-- End Student List -->
+
+					<!-- Start Pagination section -->
+					<nav>
+						<ul class="pagination">
+							<li><a href="#">&laquo;</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">&raquo;</a></li>
+						</ul>
+					</nav>
+					<!-- End Pagination section -->
+
+				</div>
+			</div>
+			<!-- End Main Page Content -->
+			
+			<!-- Start Footer -->
+			<div class="row" id="footer">
+				<div class="col-xs-12">
+					&copy; 2016 Podoba_Book, rexxx_dj
+				</div>
+			</div>
+			<!-- End Footer -->
+		</div>
+		<!-- End Container -->
+
+
+		<!--Javascripts Section-->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>
