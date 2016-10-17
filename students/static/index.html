@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="us">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Accounting Student Service</title>
+		<meta name="desctiption"
+			  value="Система Учета Студеттов Учебного Заведения" />
+		<!-- Include Styles -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<!-- <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid red;}</style> -->
+
+	</head>
+	<body>
+		<!-- Start Container -->
+		<div class="container">
+			<!-- Start Header -->
+			<div class="row" id="header">
+				<!-- LOGO -->
+				<div class="col-xs-8">
+					<h1>Accounting Student Service</h1>
+				</div>
+				<!-- Groups Selector -->
+				<div class="col-xs-4" id="group-selector">
+					<strong>Students:</strong>
+					<select>
+						<option value="">All Students</option>
+						<option value="">IT - 21, Tokar Ruslan</option>
+						<option value="">IT - 22, Sergiy Povazhnuk</option>
+					</select>
+				</div>
+			</div> 
+			<!-- End Header -->
+
+			<!-- Start SubHeader -->
+			<div class="row" id="sub-header">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentatuion" class="active">
+							<a href="index.html">Students</a>
+						</li>
+						<li role="presentatuion">
+							<a href="attendance.html">Attendance</a>
+						</li>
+						<li role="presentatuion">
+							<a href="groups.html">Groups</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- End SubHeader -->
+
+			<!-- Start Main Page Content -->
+			<div class="row" id="content-columns">
+				<div class="col-xs-12" id="content-column">
+					<!-- Status Message -->
+					<div class="alert alert-warning">
+						Changes reverted!
+					</div>
+
+					<h2>Students List</h2>
+					<!-- Add Button -->
+					<a class="btn btn-info" href="#">Add New Student</a>
+
+					<div>There will be a table of students</div>
+
+					<!-- Start Student List -->
+					<table class="table table-hover table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Photo</th>
+								<th>Surname</th>
+								<th>Name</th>
+								<th>Ticket #</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>
+									<img height="30" width="30" class="img-circle" src="./img/test.jpg"> 
+								</td>
+								<td>
+									<a title="Edit" href="#">Tokar</a>
+								</td>
+								<td>
+									<a title="Edit" href="#">Ruslan</a>
+								</td>
+								<td>12458</td>							
+								<td>
+									<div class="dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+											Action
+											<span class="caret"></span>	
+										</button>
+										<ul class="dropdown-menu" role="dropdown">
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1" href="#">
+													Attendance
+												</a>	
+											</li>
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1" href="#">
+													Edit
+												</a>	
+											</li>	
+											<li role="presentation">
+												<a role="menuitem" tabindex="-1" href="#">
+													Delete
+												</a>	
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- End Student List -->
+
+					<!-- Start Pagination section -->
+					<nav>
+						<ul class="pagination">
+							<li><a href="#">&laquo;</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">&raquo;</a></li>
+						</ul>
+					</nav>
+					<!-- End Pagination section -->
+
+				</div>
+			</div>
+			<!-- End Main Page Content -->
+			
+			<!-- Start Footer -->
+			<div class="row" id="footer">
+				<div class="col-xs-12">
+					&copy; 2016 Podoba_Book, rexxx_dj
+				</div>
+			</div>
+			<!-- End Footer -->
+		</div>
+		<!-- End Container -->
+
+
+		<!--Javascripts Section-->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>
