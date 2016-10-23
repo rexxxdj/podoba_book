@@ -28,6 +28,10 @@ urlpatterns = [
 	url(r'^groups/add/$', 'students.views.groups_add',name='groups_add'),
 	url(r'^groups/(?P<gid>\d+)/edit/$','students.views.groups_edit',name='groups_edit'),
 	url(r'^groups/(?P<gid>\d+)/delete/$','students.views.groups_delete',name='groups_delete'),
+	
+	#Attendance urls
+	url(r'^attendance/$','students.views.attendance',name='attendance'),
+	url(r'^attendance/(?P<sid>\d+)$','students.views.attendance_edit',name='attendance_edit'),
 
     url(r'^admin/', admin.site.urls),
 ]

@@ -1,0 +1,17 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Groups{% endblock meta_title %}
+{% block title %}Groups List{% endblock title %}
+
+{% block content %}
+<!-- Add Button -->
+<a class="btn btn-info" href="{% url "groups_add" %}">Add New Group</a>
+<div>There will be a table of Groups</div>
+	<!-- Start Group List -->
+	
+	<!-- End Group List -->
+
+{% include "include/pag.html" %}
+{% endblock content %}

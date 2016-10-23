@@ -1,0 +1,98 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Attendance{% endblock meta_title %}
+{% block title %}Attendance Allowance{% endblock title %}
+
+{% block content %}
+	<!-- Start Main Page Content -->
+	<div class="row" id="content-columns">
+		<div class="col-xs-12" id="content-column">
+			<p class="mcalendar">
+				<a href="#">&lArr;</a>
+				<a href="#"> October </a>
+				<a href="#"> 2016 </a>
+				<a href="#">&rArr;</a>
+			</p>
+			<hr>
+			<!-- Start List -->
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Student</th>
+						<th>We<br>1</th>
+						<th>Th<br>2</th>
+						<th>Fr<br>3</th>
+						<th>Sa<br>4</th>
+						<th style="color: red">Su<br>5</th>
+						<th>Mo<br>6</th>
+						<th>Tu<br>7</th>
+						<th>We<br>8</th>
+						<th>Th<br>9</th>						
+						<th>Fr<br>10</th>
+						<th>Sa<br>11</th>
+						<th style="color: red">Su<br>12</th>
+						<th>...</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th><a href="#">Rusan Tokar</a></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th style="color: red"><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th style="color: red"><input type="checkbox" checked></th>
+						<th>...</th>
+					</tr>
+					<tr>
+						<th>2</th>
+						<th><a href="#">Oleg Ponomarenko</a></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th style="color: red"><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+					 	<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+						<th style="color: red"><input type="checkbox" checked></th>
+						<th>...</th>
+					</tr>
+					<tr>
+						<th>3</th>
+						<th><a href="#">Ivan Ivanov</a></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+						<th style="color: red"><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" checked></th>
+						<th><input type="checkbox" unchecked></th>
+						<th style="color: red"><input type="checkbox" checked></th>
+						<th>...</th>
+					</tr>
+				</tbody>
+			</table>
+			<!-- End Student List -->
+		</div>
+	</div>
+	<!-- End Main Page Content -->
+{% endblock content %}

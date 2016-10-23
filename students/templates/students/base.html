@@ -1,0 +1,97 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="us">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Accounting Student Service - {% block meta_title %}{% endblock meta_title %}</title>
+		<meta name="desctiption"
+			  value="Система Учета Студентов Учебного Заведения" />
+		<!-- Include Styles -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{{ PORTAL_URL }}{% static "css/main.css" %}">
+		{% block extra_css %}{% endblock extra_css %}
+		<!-- <style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 1px solid red;}</style> -->
+
+	</head>
+	<body>
+		<!-- Start Container -->
+		<div class="container">
+		
+			{% block header %}
+			<!-- Start Header -->
+			<div class="row" id="header">
+				<!-- LOGO -->
+				<div class="col-xs-8">
+					<h1>Accounting Student Service</h1>
+				</div>
+				<!-- Groups Selector -->
+				<div class="col-xs-4" id="group-selector">
+					<strong>Students:</strong>
+					<select>
+						<option value="">All Students</option>
+						<option value="">IT - 21, Tokar Ruslan</option>
+						<option value="">IT - 22, Sergiy Povazhnuk</option>
+					</select>
+				</div>
+			</div> 
+			<!-- End Header -->
+			{% endblock header %}
+			
+			{% block subheader %}
+			<!-- Start SubHeader -->
+			<div class="row" id="sub-header">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentatuion" {% if request.path == '/' %} class="active"{% endif %}>
+							<a href="{% url "home" %}">Students</a>
+						</li>
+						<li role="presentatuion" {% if '/attendance' in request.path %} class="active"{% endif %}>
+							<a href="{% url "attendance" %}">Attendance</a>
+						</li>
+						<li role="presentatuion" {% if '/groups' in request.path %} class="active"{% endif %}>
+							<a href="{% url "groups" %}">Groups</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- End SubHeader -->
+			{% endblock subheader %}
+			
+			<!-- Start Main Page Content -->
+			<div class="row" id="content-columns">
+				<div class="col-xs-12" id="content-column">
+					<!-- Status Message -->
+					{% comment "Not used alert so far" %}
+					<div class="alert alert-warning" role="alert">
+						Status Update!
+					</div>
+					{% endcomment %}
+					
+					<h2>{% block title %}{% endblock title %}</h2>
+					
+					{% block content %}{% endblock content %}
+					
+				</div>
+			</div>
+			<!-- End Main Page Content -->			
+			
+			<!-- Start Footer -->
+			<div class="row" id="footer">
+				<div class="col-xs-12">
+					{% block footer %}&copy; 2016 Podoba_Book, rexxx_dj{% endblock footer %}
+				</div>
+			</div>
+			<!-- End Footer -->			
+			
+		</div>
+		<!-- End Container -->
+		
+
+
+		<!--Javascripts Section-->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		{% block extra_js %}{% endblock extra_js %}
+	</body>
+</html>
