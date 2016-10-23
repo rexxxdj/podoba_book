@@ -1,2 +1,2 @@
 # podoba_book
-work on Vitaly Podoba book (pethon/django)
+work on Vitaly Podoba book (python/django)
