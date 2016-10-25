@@ -11,22 +11,53 @@
 <div>There will be a table of students</div>
 	<!-- Start Student List -->
 	<table class="table table-hover table-striped">
+		{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Photo</th>
-				<th>Surname</th>
-				<th>Name</th>
-				<th>Ticket #</th>
+				<th>
+					<a href="{% url "home" %}?order_by=photo{% if order_by == 'photo' and reverse != '1' %}&amp;reverse=1{% endif %}">
+					Photo
+					{% if order_by == 'photo' and reverse != '1' %}&uarr;
+					{% elif order_by == 'photo' and reverse == '1' %}&darr;
+					{% endif %}
+				</th>
+				<th>
+					<a href="{% url "home" %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
+						Surname
+					{% if order_by == 'last_name' and reverse != '1' %}&uarr;
+					{% elif order_by == 'last_name' and reverse == '1' %}&darr;
+					{% elif order_by == '' %}&uarr;
+					{% endif %}
+				</th>
+				<th>
+					<a href="{% url "home" %}?order_by=first_name{% if order_by == 'first_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
+						Name
+					{% if order_by == 'first_name' and reverse != '1' %}&uarr;
+					{% elif order_by == 'first_name' and reverse == '1' %}&darr;
+					{% endif %}
+				</th>
+				<th>
+					<a href="{% url "home" %}?order_by=ticket{% if order_by == 'ticket' and reverse != '1' %}&amp;reverse=1{% endif %}">
+						Ticket #
+					{% if order_by == 'ticket' and reverse != '1' %}&uarr;
+					{% elif order_by == 'ticket' and reverse == '1' %}&darr;
+					{% endif %}
+				</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
+		{% endwith %}
 		<tbody>
 			{% for student in students %}
 			<tr>
 				<td>{{ forloop.counter }}</td>
 				<td>
-					<img height="30" width="30" class="img-circle" src="{% static student.image %}"> 
+					{% if student.photo %}
+						<img class="img-circle" src="{{ student.photo.url }}" height="30"	width="30" />
+					{% else %}
+						<img class="img-circle" src="{% static "img/default_user.png" %}" height="30" width="30" >
+					{% endif %}
 				</td>
 				<td>
 					<a title="Edit" href="{% url "students_edit" student.id %}">{{ student.last_name }}</a>
@@ -65,5 +96,5 @@
 	</table>
 	<!-- End Student List -->
 	{% include "include/pag.html" %}
-	
+
 {% endblock content %}

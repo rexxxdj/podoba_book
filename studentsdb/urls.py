@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import *
+from settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = [
 	#students urls
@@ -28,10 +30,15 @@ urlpatterns = [
 	url(r'^groups/add/$', 'students.views.groups_add',name='groups_add'),
 	url(r'^groups/(?P<gid>\d+)/edit/$','students.views.groups_edit',name='groups_edit'),
 	url(r'^groups/(?P<gid>\d+)/delete/$','students.views.groups_delete',name='groups_delete'),
-	
+
 	#Attendance urls
 	url(r'^attendance/$','students.views.attendance',name='attendance'),
 	url(r'^attendance/(?P<sid>\d+)$','students.views.attendance_edit',name='attendance_edit'),
 
     url(r'^admin/', admin.site.urls),
 ]
+
+if DEBUG:
+	urlpatterns += patterns('',
+		url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+			'document_root': MEDIA_ROOT}))

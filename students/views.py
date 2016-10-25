@@ -1,21 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from models import Student
 
 
 #students
 def students_list(request):
-	students = (
-		{'id': 1,
-		'first_name': u'Ruslan',
-		'last_name': u'Tokar',
-		'ticket': 235,
-		'image': 'img/test.jpg'},
-		{'id': 2,
-		'first_name': u'Povazhnuk',
-		'last_name': u'Serhyi',
-		'ticket': 2123,
-		'image': 'img/test.jpg'},
-	)
+	students = Student.objects.all().order_by('last_name')
+	order_by = request.GET.get('order_by', '')
+	if order_by in ('photo','last_name','first_name','ticket'):
+		students = students.order_by(order_by)
+		if request.GET.get('reverse','') == '1':
+			students = students.reverse()
+
+	paginator = Paginator(students,2)
+	page = request.GET.get('page')
+	try:
+		students = paginator.page(page)
+	except PageNotAnInteger:
+		students = paginator.page(1)
+	except EmptyPage:
+		students = paginator.page(paginator.num_pages)
+
 	return render(request,'students/students_list.html',{'students':students})
 
 def students_add(request):
@@ -40,7 +46,7 @@ def groups_edit(request, gid):
 
 def groups_delete(request, gid):
 	return HttpResponse('<h1>Delete Group %s</h1>' % gid)
-	
+
 #attendance
 def attendance(request):
 	return render(request,'students/attendance.html')
