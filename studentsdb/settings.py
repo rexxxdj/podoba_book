@@ -78,16 +78,16 @@ PORTAL_URL = 'http://localhost:8000'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'l;buehlf',
-        'NAME': 'students_db',
-    }
-}
+from .db import DATABASES
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'HOST': 'localhost',
+#        'USER': 'root',
+#        'PASSWORD': 'l;buehlf',
+#        'NAME': 'students_db',
+#    }
+#}
 
 
 # Password validation
@@ -127,6 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
